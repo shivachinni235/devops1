@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    tools {
+        maven "Maven"
+    }
+    stages {
+        stage('Build') {
+            steps {
+                git 'https://github.com/shivachinni235/appproject.git'
+                sh "mvn -Dmaven.test.failure.ignore=true clean install"
+            }
+        }
+}
+}
