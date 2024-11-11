@@ -1,0 +1,8 @@
+---
+ - hosts: localhost
+   connection: local
+   tasks:
+     - file:
+         path: /root/devops.txt
+         state: touch
+         mode: 0777
