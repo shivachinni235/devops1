@@ -1,0 +1,21 @@
+---
+ - hosts: localhost
+   become: true
+   tasks:
+     - mail:
+         host: smtp.gmail.com
+         port: 587
+         username: shiva.chinni235@gmail.com
+         password: nnlm urum dzdn lkfd
+         to: srikar0610@gmail.com, dattatreyasharma.talala@gmail.com 
+         cc:  shiva.junga@gmail.com
+         subject: AWX TOPIC
+         headers:
+           - X-Auto-Response-Suppress=All
+           - Reply-To=srikar0610@gmail.com
+         body: welcome to awx automation
+         secure: always
+         secure: starttls
+         charset: utf-8
+         attach: /root/devops.txt
+       delegate_to: localhost
